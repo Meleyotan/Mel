@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" initial-scale="1.0">
+	<title>Using Forms</title>
+	<script type="text/javascript">
+		function welcome() {
+		var test=document.getElementById('firstname').value;
+		var regex=/^[A-Za-z]{2,15}$/;
+
+		if (regex.test(test)) {
+			document.getElementById('message1').style.color="Teal"
+			document.getElementById('message1').innerHTML="<strong>Good!</strong>";
+		}
+		else{
+			document.getElementById('message1').style.color="Red";
+			document.getElementById('message1').innerHTML="<strong>Invalid!<strong>"
+		}	// body...
+		}
+		function check() {
+		var field=document.getElementById('surname').value;
+		var regex=/^[A-Za-z]{2,15}$/;
+
+		if (regex.test(field)) {
+			document.getElementById('message2').style.color="Green"
+			document.getElementById('message2').innerHTML="<strong>Good!</strong>";
+		}
+		else{
+			document.getElementById('message2').style.color="Red"
+			document.getElementById('message2').innerHTML="<strong>Invalid!</strong>";
+		}
+	}
+	function Submitted() {
+    	var firstname=document.getElementById('firstname').value;
+    	var surname=document.getElementById('surname').value;
+    	var userName=firstname+ " " + surname;
+    
+    	document.getElementById('loginDetails').innerHTML ="<h2>You have successfully submitted!</h2>";//The login Details is computed
+    	document.getElementById('loginDetails').innerHTML+="<p>USERNAME:</p>" + userName.toUpperCase();
+    	document.getElementById('loginDetails').innerHTML+="<br>"+ "<p>EMAIL:</p>" + emailAdress;
+    }
+	</script>
+	<style type="text/css">
+		body{margin: 0 auto;background-color: #e3f3f2;overflow: scroll;}
+		form{position: fixed;top: 180px;right: 600px; border: 2px solid;padding: 20px;box-shadow: 15px 15px 15px #333;}
+		select.modify{font-family: 'Segoe UI','Roboto', arial,sans-serif;
+		color: #333;
+		background-color: teal;}
+		label{font-family: 'Open San Condensed',sans-serif;}
+		form>h1{text-align: center;}
+		input{border-color: aliceblue;}
+		input:hover{transform:scale(0.98)}
+		nav>label{font-weight: 400px;}
+		span{padding: 10px;font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;}
+		button{margin-left: 13px;}
+		img{opacity: 0.9;width: 30%;}
+		h1{font-size: 4em;}
+		section{position: fixed;right: 200px;}
+		section>img{width: 10%;position: fixed;right: 350px;}
+		section>img:hover{}
+		section>aside{position: fixed;line-height: 1.5em;font-size: 18px;
+    margin-right: 20px;}
+	</style>
+</head>
+<body>
+	<img src="mel.png" alt="mel-logo">
+	<header>
+<form action='hiit2.html'>
+	<h1>Sign Up</h1>
+	<nav>
+	<label>First name:</label>
+	<br>
+	<input type="text" name="Firstname" id="firstname" onblur="welcome()"><span id="message1"></span><label>Middle name:</label><input type="text" name="middleName">
+	<br>
+	<br>
+	<label>Surname:</label>
+	<br>
+	<input type="text" name="Surname" id="surname" onblur="check()"><span id="message2"></span>
+	<br>
+	<br>
+	<label>Date of Birth:</label>
+	<br>
+	<input type="date" name="dateofBirth">
+	<br>
+	<br>
+	<br>
+	<label>Please choose your course</label>
+	<br>
+	<select class="modify" required>
+		<option value="html">HTML</option>
+	    <option value="css">CSS</option>
+	    <option value="bootstrap">BOOTSTRAP</option>
+		<option value="javascript">JAVASCRIPT</option>
+	</select>
+	<button type="Submit" name="">Select</button>
+</nav>
+</form>
+<section>
+	<h2>Do you know?</h2>
+	<img src="ligh.png">
+	<aside>MotoheadThe band was founded in 1975 by already experienced musicians. Their leader Ian “Lemmy” Kilmister was a former member of the space rock band Hawkwind.
+
+Larry Wallis had played with Pink Fairies. Eddie Clarke had been a member of Curtis Knight’s Zeus.
+
+Their previous experience is one element which divides critics and fans over whether the band belongs to the new wave of the British heavy metal.
+</aside>
+</section>
+</header>
+</body>
+</html>
